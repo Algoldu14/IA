@@ -15,8 +15,19 @@
 
 ;metodo que comprueba para izquiera
 (define (compruebaDer pos lista color)
-  
-   #f
+  (define contador 0)
+
+  (for ([i (- (length lista) pos)])
+    (if (equal? (list-ref lista (+ i pos)) (getColorOpuesto color))
+       (set! contador (+ 1 contador))
+       (= 3 3)
+      )
+    
+   
+    #:break (equal? (list-ref lista (+ i pos))  color) contador
+     #:break (equal? 'libre (list-ref lista (+ i pos))) (set! contador 17)
+    )
+  contador
   )
 
 ;metodo que genera una lista auxiliar a partir de un numero de fila
