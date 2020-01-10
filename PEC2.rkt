@@ -23,8 +23,19 @@
 
 ;metodo que genera una lista auxiliar a partir de un numero de fila
 (define (generaFila tablero fila)
-  #t
+  (list-ref tablero fila)
   )
+
+;metodo que genera una lista auxiliar a partir de un numero de columna
+(define (generarColumna tablero  columna )
+  (define aux '())
+  (for ([i 7]) (set! aux (append-elt aux (list-ref (list-ref tablero i) columna))))
+  aux
+  )
+
+
+(define (append-elt lst x)
+  (append lst (list x)))
 
 ;metodo que cuenta la cantidad de casillas libres
 (define (cuentaLibres tablero)
