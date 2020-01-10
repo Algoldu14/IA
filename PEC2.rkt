@@ -1,12 +1,12 @@
 #lang racket
 (define partida1 '(('libre 'libre 'libre 'libre 'libre 'libre 'libre 'libre) 
                    ('libre 'libre 'libre 'libre 'libre 'libre 'libre 'libre)
-                       ('libre 'libre 'libre 'libre 'libre 'libre 'libre 'libre)
-                       ('libre 'libre 'libre 'blanc 'negra 'libre 'libre 'libre)
-                       ('libre 'libre 'libre 'negra 'blanc 'libre 'libre 'libre)
-                       ('libre 'libre 'libre 'libre 'libre 'libre 'libre 'libre)
-                       ('libre 'libre 'libre 'libre 'libre 'libre 'libre 'libre)
-                       ('libre 'libre 'libre 'libre 'libre 'libre 'libre 'libre)))
+                   ('libre 'libre 'libre 'libre 'libre 'libre 'libre 'libre)
+                   ('libre 'libre 'libre 'blanc 'negra 'libre 'libre 'libre)
+                   ('libre 'libre 'libre 'negra 'blanc 'libre 'libre 'libre)
+                   ('libre 'libre 'libre 'libre 'libre 'libre 'libre 'libre)
+                   ('libre 'libre 'libre 'libre 'libre 'libre 'libre 'libre)
+                   ('libre 'libre 'libre 'libre 'libre 'libre 'libre 'libre)))
 
 ;metodo que comprueba si un movimiento cambia una ficha en una lista auxiliar
 (define (compruebaLista pos lista color)
