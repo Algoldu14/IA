@@ -1,12 +1,12 @@
 #lang racket
-(define partida1 (list 'libre 'libre 'libre 'libre 'libre 'libre 'libre 'libre 
-                       'libre 'libre 'libre 'libre 'libre 'libre 'libre 'libre  
-                       'libre 'libre 'libre 'libre 'libre 'libre 'libre 'libre 
-                       'libre 'libre 'libre 'blanc 'negra 'libre 'libre 'libre 
-                       'libre 'libre 'libre 'negra 'blanc 'libre 'libre 'libre  
-                       'libre 'libre 'libre 'libre 'libre 'libre 'libre 'libre 
-                       'libre 'libre 'libre 'libre 'libre 'libre 'libre 'libre 
-                       'libre 'libre 'libre 'libre 'libre 'libre 'libre 'libre))
+(define partida1 '(('libre 'libre 'libre 'libre 'libre 'libre 'libre 'libre) 
+                   ('libre 'libre 'libre 'libre 'libre 'libre 'libre 'libre)
+                       ('libre 'libre 'libre 'libre 'libre 'libre 'libre 'libre)
+                       ('libre 'libre 'libre 'blanc 'negra 'libre 'libre 'libre)
+                       ('libre 'libre 'libre 'negra 'blanc 'libre 'libre 'libre)
+                       ('libre 'libre 'libre 'libre 'libre 'libre 'libre 'libre)
+                       ('libre 'libre 'libre 'libre 'libre 'libre 'libre 'libre)
+                       ('libre 'libre 'libre 'libre 'libre 'libre 'libre 'libre)))
 
 ;metodo que comprueba si un movimiento cambia una ficha en vertical
 (define (cambia?vertical tablero posicion color)
@@ -21,17 +21,22 @@
      ])
   )
 
+;metodo que genera una lista auxiliar a partir de un numero de fila
+(define (generaFila tablero fila)
+  #t
+  )
+
 ;metodo que cuenta la cantidad de casillas libres
 (define (cuentaLibres tablero)
-  (length (indexes-of tablero 'libre))
+  (length (indexes-of (flatten tablero) 'libre))
  )
 
 ;metodo que cuenta la cantidad de casillas negras
 (define (cuentaNegras tablero)
-  (length (indexes-of tablero 'blanc))
+  (length (indexes-of (flatten tablero) 'blanc))
  )
 
 ;metodo que cuenta la cantidad de casillas blancas
 (define (cuentaBlancas tablero)
-  (length (indexes-of tablero 'negra))
+  (length (indexes-of (flatten tablero) 'negra))
  )
