@@ -8,17 +8,21 @@
                        ('libre 'libre 'libre 'libre 'libre 'libre 'libre 'libre)
                        ('libre 'libre 'libre 'libre 'libre 'libre 'libre 'libre)))
 
-;metodo que comprueba si un movimiento cambia una ficha en vertical
-(define (cambia?vertical tablero posicion color)
-  (cond
-    [(< posicion 15) 0]
-    [(> posicion 47) 0]
-    [else
-     (cond
-      [(< posicion 15) #t]
-      [(> posicion 47) #t]
-      [else #f])
-     ])
+;metodo que comprueba si un movimiento cambia una ficha en una lista auxiliar
+(define (compruebaLista pos lista color)
+  #t
+)
+
+;metodo que comprueba para izquiera
+(define (compruebaIzq pos lista color)
+  (define contador 0)
+  (define aux 0)
+  (for/and ([i lista])
+    (equal? (getColorOpuesto color) (list-ref lista i))
+      (set! contador (+ contador 1))
+    )
+  
+  contador
   )
 
 ;metodo que genera una lista auxiliar a partir de un numero de fila
@@ -36,6 +40,11 @@
 
 (define (append-elt lst x)
   (append lst (list x)))
+
+;metodo que retorna el color opuesto
+(define (getColorOpuesto color)
+  (if (equal? color 'blanc) 'negra 'blanc)
+)
 
 ;metodo que cuenta la cantidad de casillas libres
 (define (cuentaLibres tablero)
