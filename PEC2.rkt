@@ -17,11 +17,13 @@
 (define (compruebaIzq pos lista color)
   (define contador 0)
   (define aux 0)
-  (for/and ([i lista])
-    (equal? (getColorOpuesto color) (list-ref lista i))
-      (set! contador (+ contador 1))
+  (for ([i (- (length lista) pos)])
+    (equal? (getColorOpuesto color) (list-ref lista (+ i pos)))
+    (set! contador (+ contador 1))
     )
-  
+
+  (if #t #t #f
+   )
   contador
   )
 
