@@ -8,10 +8,6 @@
                        'libre 'libre 'libre 'libre 'libre 'libre 'libre 'libre 
                        'libre 'libre 'libre 'libre 'libre 'libre 'libre 'libre))
 
-(define (getValor tablero fila columna)
-  (list-ref(list-ref tablero fila) columna)
-  )
-
 ;metodo que comprueba si un movimiento cambia una ficha en vertical
 (define (cambia?vertical tablero posicion color)
   (cond
